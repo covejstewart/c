@@ -1,0 +1,8 @@
+TDD Bowling Kata for Embedded C.  
+
+Based on the Slideshare presentation
+http://www.slideshare.net/amritayan/test-driven-development-in-c
+
+Using Ubuntu 10.04
+
+compiled with $c99 -Wall *.c && ./a.out
