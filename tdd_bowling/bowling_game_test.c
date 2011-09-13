@@ -18,6 +18,12 @@ static void test_init() {
 	assert( bowling_game_score() == 0 && "test_init()" );
 }
 
+static void test_too_many_rolls() {
+	bowling_game_init();
+	roll_many(30,1);
+	assert( bowling_game_score() == 20 && "test_too_many_rolls()" );
+}
+
 static void test_gutter_game() {
 	bowling_game_init();
 	roll_many(20,0);
@@ -35,12 +41,18 @@ static void test_one_spare() {
 	roll_many(10,0);
 	bowling_game_roll(8);
 	bowling_game_roll(2);
-	roll_many(8,0);
-	assert( bowling_game_score() == 20 && "test_one_spare()" );
+	bowling_game_roll(4);
+	roll_many(7,0);
+	assert( bowling_game_score() == 18 && "test_one_spare()" );
+}
+
+static void test_perfect_game() {
+	bowling_game_init();
 }
 
 int main() {
 	test_init();
+	test_too_many_rolls();
 	test_gutter_game();
 	test_all_ones();
 	test_one_spare();
