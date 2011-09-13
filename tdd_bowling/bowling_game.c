@@ -8,12 +8,6 @@
 static int pin_counts[MAX_ROLLS];
 static int roll_count;
 
-//void debug_scores() {
-//	for (int i = 0; i < MAX_ROLLS; i++) {
-//		printf("roll[%i] = %i\n",i,pin_counts[i]);
-//	}
-//}
-
 void bowling_game_init() {
 
 	roll_count = 0;
@@ -75,8 +69,6 @@ int  bowling_game_score() {
 			frame_index += 2;
 		}
 	}
-//	debug_scores();
-	
 	return score;
 }
 
