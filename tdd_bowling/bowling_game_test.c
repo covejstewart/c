@@ -46,8 +46,21 @@ static void test_one_spare() {
 	assert( bowling_game_score() == 18 && "test_one_spare()" );
 }
 
+static void test_one_strike() {
+	bowling_game_init();
+	bowling_game_roll(4);
+	bowling_game_roll(0);
+	bowling_game_roll(10);
+	bowling_game_roll(2);
+	bowling_game_roll(2);
+	roll_many(14,0);
+	assert( bowling_game_score() == 22 && "test_one_strike()" );
+}
+
 static void test_perfect_game() {
 	bowling_game_init();
+	roll_many(12,10);
+	assert( bowling_game_score() == 300 && "test_perfect_game()" );
 }
 
 int main() {
@@ -56,4 +69,6 @@ int main() {
 	test_gutter_game();
 	test_all_ones();
 	test_one_spare();
+	test_one_strike();
+	test_perfect_game();
 }
