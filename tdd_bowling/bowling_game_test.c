@@ -65,9 +65,9 @@ static void test_perfect_game() {
 
 int main() {
 	test_init();
-	test_too_many_rolls();
 	test_gutter_game();
 	test_all_ones();
+	test_too_many_rolls();
 	test_one_spare();
 	test_one_strike();
 	test_perfect_game();
