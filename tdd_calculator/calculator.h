@@ -1,4 +1,4 @@
 //calculator.h
 
-int  calculator_add(char* numbers);
+int  calculator_add(const char numbers[]);
 

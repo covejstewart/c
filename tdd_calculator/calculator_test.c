@@ -30,8 +30,16 @@ static void test_five_numbers() {
 	assert(calculator_add("100,200,10,1,50") == 361 && "test_five_numbers()");
 }
 
+static void test_leading_delims() {
+	assert(calculator_add(",17,,10") == 27 && "test_leading_delims()");
+}
+
 static void test_newline_delims() {
 	assert(calculator_add("100\n100,100") == 300 && "test_newline_delims()");
+}
+
+static void test_change_delimiter() {
+	assert(calculator_add("//*\n1*2*3") == 6 && "test_change_delimiter()");
 }
 
 int main() {
@@ -41,5 +49,7 @@ int main() {
 	test_two_small_numbers();
 	test_two_big_numbers();
 	test_five_numbers();
+	test_leading_delims();
 	test_newline_delims();
+	test_change_delimiter();
 }
