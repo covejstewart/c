@@ -42,6 +42,14 @@ static void test_change_delimiter() {
 	assert(calculator_add("//*\n1*2*3") == 6 && "test_change_delimiter()");
 }
 
+static void test_exception_on_negative() {
+	assert(calculator_add("-10") == -1 && "test_exception_on_negative()");
+}
+
+static void test_exception_on_multiple_negatives() {
+	assert(calculator_add("-10,-30,4,-70") == -1 && "test_exception_on_multiple_negatives()");
+}
+
 int main() {
 	test_empty_string();
 	test_single_digit_number();
@@ -52,4 +60,6 @@ int main() {
 	test_leading_delims();
 	test_newline_delims();
 	test_change_delimiter();
+	test_exception_on_negative();
+	test_exception_on_multiple_negatives();
 }
