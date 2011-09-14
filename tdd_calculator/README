@@ -1,1 +1,6 @@
 Calculator Kata from http://osherove.com/tdd-kata-1/
+Ubuntu 10.04
+>$clear && c99 -Wall *.c && ./a.out
+
+Assumptions:
+Using a return value of -1 as an exception.
