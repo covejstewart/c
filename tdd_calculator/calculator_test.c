@@ -32,6 +32,7 @@ static void test_five_numbers() {
 
 static void test_newline_delims() {
 	assert(calculator_add("100\n100,100") == 300 && "test_newline_delims()");
+}
 
 int main() {
 	test_empty_string();
